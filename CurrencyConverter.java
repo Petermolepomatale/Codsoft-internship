@@ -1,25 +1,31 @@
-import javax.swing.JOptionPane;
+import java.util.Scanner;
 
 public class CurrencyConverter {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
         // Step 1: Currency Selection
-        String baseCurrency = JOptionPane.showInputDialog(null, "Enter the base currency (e.g., USD):");
-        String targetCurrency = JOptionPane.showInputDialog(null, "Enter the target currency (e.g., EUR):");
+        System.out.print("Enter the base currency (e.g., USD): ");
+        String baseCurrency = scanner.nextLine();
+        System.out.print("Enter the target currency (e.g., EUR): ");
+        String targetCurrency = scanner.nextLine();
 
         // Step 2: Currency Rates (Simulated)
         // In a real implementation, you would fetch exchange rates from an API
         double exchangeRate = getExchangeRate(baseCurrency, targetCurrency);
 
         // Step 3: Amount Input
-        String amountStr = JOptionPane.showInputDialog(null, "Enter the amount to convert:");
-        double amount = Double.parseDouble(amountStr);
+        System.out.print("Enter the amount to convert: ");
+        double amount = scanner.nextDouble();
 
         // Step 4: Currency Conversion
         double convertedAmount = amount * exchangeRate;
 
         // Step 5: Display Result
-        String message = String.format("%.2f %s is equivalent to %.2f %s", amount, baseCurrency, convertedAmount, targetCurrency);
-        JOptionPane.showMessageDialog(null, message, "Currency Conversion Result", JOptionPane.INFORMATION_MESSAGE);
+        System.out.printf("%.2f %s is equivalent to %.2f %s\n", amount, baseCurrency, convertedAmount, targetCurrency);
+
+        // Close the scanner
+        scanner.close();
     }
 
     // Method to fetch exchange rate (Simulated)
