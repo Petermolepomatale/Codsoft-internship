@@ -1,10 +1,18 @@
-import javax.swing.JOptionPane;
+import java.util.Scanner;
 
 public class StudentGradeCalculator {
     public static void main(String[] args) {
-        // Array containing marks obtained by the student
-        int[] marksObtained ={89, 94, 65, 85, 90};
-        int totalSubjects = 5;
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter marks obtained for each subject
+        int[] marksObtained = new int[5];
+        System.out.println("Enter marks obtained for each subject:");
+        for (int i = 0; i < marksObtained.length; i++) {
+            System.out.print("Subject " + (i + 1) + ": ");
+            marksObtained[i] = scanner.nextInt();
+        }
+
+        int totalSubjects = marksObtained.length;
 
         // Calculate total marks, average percentage, and grade
         int totalMarks = calculateTotalMarks(marksObtained);
@@ -13,6 +21,9 @@ public class StudentGradeCalculator {
 
         // Display the results
         displayResults(totalMarks, averagePercentage, grade);
+
+        // Close the scanner
+        scanner.close();
     }
 
     // Calculate total marks obtained
@@ -54,11 +65,10 @@ public class StudentGradeCalculator {
         return grade;
     }
 
-    // Display results using JOptionPane
+    // Display results
     private static void displayResults(int totalMarks, double averagePercentage, char grade) {
-        String message = "Total marks: " + totalMarks + "\n"
-                + "Average percentage: " + averagePercentage + "%" + "\n"
-                + "Grade: " + grade;
-        JOptionPane.showMessageDialog(null, message, "Student Grade Calculator", JOptionPane.INFORMATION_MESSAGE);
+        System.out.println("Total marks: " + totalMarks);
+        System.out.println("Average percentage: " + averagePercentage + "%");
+        System.out.println("Grade: " + grade);
     }
 }
