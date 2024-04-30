@@ -1,6 +1,6 @@
 Student Grade Calculator
 
-The Student Grade Calculator is a Java program built to work by calculating the total score, average grade and the grade online a student will attain based on the hand subjects. The interface of user here is built using JOptionPane.
+The Student Grade Calculator is a Java program built to work by calculating the total score, average grade and the grade online a student will attain based on the hand subjects. The interface of user here is built using Scanner.
 
 
 Features
@@ -76,7 +76,7 @@ This ATM Creation software created by [MATALE PETER MOLEPO] is java-developed.
 
 Currency Converter
 
-The Currency Converter is a Java program that gives a user a chance to get the amount converted from an initial currency to the desired currency, but the values are represented by the simulated exchange rates. It just uses JOptionPane whereas user input.
+The Currency Converter is a Java program that gives a user a chance to get the amount converted from an initial currency to the desired currency, but the values are represented by the simulated exchange rates. It just uses Scanner whereas user input.
 
 
 Features
